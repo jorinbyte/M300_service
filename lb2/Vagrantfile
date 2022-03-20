@@ -88,7 +88,26 @@ mv composer.phar /usr/local/bin/composer
 chmod +x /usr/local/bin/composer
 sudo -H -u vagrant bash -c 'composer global require hirak/prestissimo'
 
+# OPcache
+file='opcache.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" https://raw.githubusercontent.com/amnuts/opcache-gui/master/index.php
+fi
+# Adminer 
+file='adminer.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" http://www.adminer.org/latest.php
+  wget -nv https://raw.githubusercontent.com/vrana/adminer/master/designs/pepa-linha/adminer.css
+fi
 
+#mysql Login erstellen 
+sudo mysql <<-EOF
+
+  create user 'Admin'@'localhost' identified by 'Admin123';
+  Grant all privileges on *.* to 'Admin'@'localhost';
+  Flush privileges;
+
+EOF
 
 SHELL
   end
