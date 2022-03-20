@@ -5,14 +5,14 @@ time_zone = "Europe/zuerich"
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu1804"
  #portforwarding
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 1234
   config.ssh.forward_agent = true
 #
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox",
     owner: "www-data", group: "www-data"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "vagrant_ubuntu1804"
+    vb.name = "vagrant_ubuntuM300_LB2_jb"
     vb.memory = 1024
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
