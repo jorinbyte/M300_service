@@ -59,6 +59,37 @@ if [ ! -L /var/www/html ]; then
   ln -fs "$dir" /var/www/html
 fi
 cd "$dir"
+
+# vhost
+file='/etc/apache2/sites-available/dev.conf'
+if [ ! -f "$file" ]; then
+  SITE_CONF=$(cat <<EOF
+<Directory /var/www/html>
+  AllowOverride All
+  Options +Indexes -MultiViews +FollowSymLinks
+  AddDefaultCharset utf-8
+  SetEnv ENVIRONMENT "development"
+  php_flag display_errors On
+  EnableSendfile Off
+</Directory>
+EOF
+)
+  echo "$SITE_CONF" > "$file"
+fi
+a2ensite dev
+systemctl reload apache2
+# Composer
+EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_SIGNATURE="$(php -r "echo hash_file('SHA384', 'composer-setup.php');")"
+php composer-setup.php --quiet
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
+sudo -H -u vagrant bash -c 'composer global require hirak/prestissimo'
+
+
+
 SHELL
   end
 end
