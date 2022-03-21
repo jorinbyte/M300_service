@@ -199,8 +199,7 @@ SHELL
   end
 end
 ```
-```ruby
-```
+
 # Testen
 
 Nachdem  ```vagrant up``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Nun kann man in den Browser ihrer Wahl ```localhost:1234``` eingeben und sollte auf folgende seite kommen:
