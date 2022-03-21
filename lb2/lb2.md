@@ -42,6 +42,7 @@ Das konzept sollte wie folgt aussehen:
 
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG)
 
+Port 80 der VM sollte auf Port 1234 des Hostsystems weitergeleitet werden um mögliche Komplikationen mit anderen Webservern zu vermeiden.
 
 <div id='Erklärung'/>
 
@@ -81,7 +82,48 @@ Vagrant.configure("2") do |config|
     s.args = [time_zone]  #zeitzone angeben
     s.inline = <<-SHELL   
 ```
- 
+
+Als nächstes legen wir die Zeitzone fest und installieren Updates und alle PAckete die wir brauchen.
+
+```ruby
+# Zeitzone 
+TIME_ZONE=$1
+# einfach instalieren und nicht auf y oder n warten
+export DEBIAN_FRONTEND=noninteractive 
+
+# Zeitzone updaten
+timedatectl set-timezone "$TIME_ZONE"
+
+# Alle Pakages updaten
+apt-get update -q
+
+# Vim und Git installieren für repositorys clonen und vim für danach in das WWW file schreiben
+apt-get install -q -y vim git
+
+# instalieren von Apache, Mariadb und PHP
+apt-get install -q -y apache2
+apt-get install -q -y php7.2 libapache2-mod-php7.2
+apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
+apt-get install -q -y mariadb-server mariadb-client
+```
+Apache starten:
+
+ ```ruby
+ systemctl restart apache2
+ ```
+
+Lokales directory erstellen um mit VM zu sharen falls es noch nicht existiert:
+```ruby
+dir='/vagrant/www'
+if [ ! -d "$dir" ]; then
+  mkdir "$dir"
+fi
+if [ ! -L /var/www/html ]; then
+  rm -rf /var/www/html
+  ln -fs "$dir" /var/www/html
+fi
+cd "$dir"
+```
 
 
 <div id='Testen'/>
