@@ -11,8 +11,6 @@
  1. [Einführung](#einführung) 
 
  2. [Erklärung Code](#Erklärung)
-    
- - 2.1 [Konfiguration VM](#kofnigcode)
 
  3. [Testen](#testen)
 
@@ -56,9 +54,9 @@ time_zone = "Europe/zuerich"
 
 Dann Starten wir die Konfiguration der Virtuellen Maschiene. Ich habe die erklärung kurz gehalten und es neben den Code geschriebn da ich sonst sehr viele von diesen Codeblöcke hätte.
 
-<div id='kofnigcode'/>
 
-## Konfiguration VM
+
+
 
 ```ruby
 #standart Vagrant erschaffen
@@ -83,6 +81,8 @@ Vagrant.configure("2") do |config|
     s.inline = <<-SHELL   
 ```
 
+
+
 Als nächstes legen wir die Zeitzone fest und installieren Updates und alle PAckete die wir brauchen.
 
 ```ruby
@@ -106,13 +106,15 @@ apt-get install -q -y php7.2 libapache2-mod-php7.2
 apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
 apt-get install -q -y mariadb-server mariadb-client
 ```
+
+
 Apache starten:
 
  ```ruby
  systemctl restart apache2
  ```
 
-Lokales directory erstellen um mit VM zu sharen falls es noch nicht existiert:
+Lokales directory erstellen  falls es noch nicht existiert und mit VM zu sharen:
 ```ruby
 dir='/vagrant/www'
 if [ ! -d "$dir" ]; then
@@ -124,11 +126,84 @@ if [ ! -L /var/www/html ]; then
 fi
 cd "$dir"
 ```
+Indexfile für die Navigation der Webseite erstellen:
 
+```ruby
+file='/etc/apache2/sites-available/dev.conf'
+if [ ! -f "$file" ]; then
+  SITE_CONF=$(cat <<EOF
+<Directory /var/www/html>
+  AllowOverride All
+  Options +Indexes -MultiViews +FollowSymLinks
+  AddDefaultCharset utf-8
+  SetEnv ENVIRONMENT "development"
+  php_flag display_errors On
+  EnableSendfile Off
+</Directory>
+EOF
+)
+  echo "$SITE_CONF" > "$file"
+fi
+```
+Apache neu laden:
+```ruby
+a2ensite dev
+systemctl reload apache2
+```
 
+Composer für die Abhängigkeitshyrarchie von PHP herunterladen und installieren:
+```ruby
+# Composer
+EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_SIGNATURE="$(php -r "echo hash_file('SHA384', 'composer-setup.php');")"
+php composer-setup.php --quiet
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
+sudo -H -u vagrant bash -c 'composer global require hirak/prestissimo'
 <div id='Testen'/>
+```
 
+OPcache File anlegen falls noch nicht vorhanden:
+```ruby
+# OPcache
+file='opcache.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" https://raw.githubusercontent.com/amnuts/opcache-gui/master/index.php
+fi
+```
+Adminer File anlegen falls noch nicht vorhanden:
+```ruby
+# Adminer 
+file='adminer.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" http://www.adminer.org/latest.php
+  wget -nv https://raw.githubusercontent.com/vrana/adminer/master/designs/pepa-linha/adminer.css
+fi
+```
+MySQL Konto für verbindung anlegen und Rechte geben:
+```ruby
+#mysql Login erstellen 
+sudo mysql <<-EOF
+
+  create user 'Admin'@'localhost' identified by 'Admin123';
+  Grant all privileges on *.* to 'Admin'@'localhost';
+  Flush privileges;
+
+EOF
+```
+Shell und File beenden:
+```ruby
+SHELL
+  end
+end
+```
+```ruby
+```
 # Testen
+
+Nachdem  ```Vagrant UP``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Kann man in den browser ```localhost:1234 ``` 
 
 <div id='quellenangabe'/>
 
