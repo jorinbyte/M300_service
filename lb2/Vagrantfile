@@ -22,7 +22,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.args = [time_zone]
     s.inline = <<-SHELL
-# configuration
 # Zeitzone 
 TIME_ZONE=$1
 # einfach instalieren und nicht auf y oder n warten

@@ -41,7 +41,38 @@ Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Ap
 
 # Erklärung Code
 
-Nun kommen wir zum Code. Am anfang hatt man den Normalen Config teil der die Configuration 
+Nun kommen wir zum Code. Als erstes setzen wir die Zeitzone als Variable diese Wird säter noch öfters verwendet. 
+
+```
+time_zone = "Europe/zuerich"
+```
+
+Dann Starten wir die Konfiguration der Virtuellen Maschiene. Ich habe die erklärung kurz gehalten und es neben den Code geschriebn da ich sonst sehr viele von diesen Codeblöcke hätte.
+
+```ruby
+#standart Vagrant erschaffen
+Vagrant.configure("2") do |config|  
+  config.vm.box = "generic/ubuntu1804" #angabe des Betriebssystems
+  config.vm.network "forwarded_port", guest: 80, host: 1234 #80 ist der Port der auf dem Gaystsystem geöffnet wird und 1234 auf der VM 
+  config.ssh.forward_agent = true #damit man sich mit der VM mittels vagrant ssh verbinden kann
+
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox", #angabe des gesharten Ordners
+    owner: "www-data", group: "www-data" #angabe owner und group des gesharten folders
+
+  config.vm.provider "virtualbox" do |vb| #config VM
+    vb.name = "vagrant_ubuntuM300_LB2_jb" #VM Name
+    vb.memory = 1024 #Ram Size
+    vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000] #synchronisation der Zeit durch Host 
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] #nat dns von Hsot übernehmen
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"] # nat Proxy von Host übernehmen
+  end
+
+  config.vm.provision "shell" do |s| #shell eingabe 
+    s.args = [time_zone]  #zeitzone angeben
+    s.inline = <<-SHELL   
+```
+ 
+
 
 <div id='Testen'/>
 
