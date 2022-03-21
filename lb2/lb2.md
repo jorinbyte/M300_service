@@ -34,9 +34,9 @@ Der verwendete Code muss von ihnen vollständigdokumentiert sein, das gilt auch 
 
 # Einführung
 
-Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Apache gehostete Website entschieden. Auf dieser Website laufen einerseits [Adminer](https://www.adminer.org/) dies ist ein Datenbankverwaltungstool das mittels PHP lauft und [OPcache](https://www.php.net/manual/en/book.opcache.php) dies ist ebefalls ein PHP Tool das die Performace von PHP drastisch verbessert. Dies alles wir mittels NAT über das LAN erreichbar sein.
+Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Apache gehostete Website entschieden. Auf dieser Website laufen einerseits [Adminer](https://www.adminer.org/) dies ist ein Datenbankverwaltungstool das mittels PHP funktioniert und [OPcache](https://www.php.net/manual/en/book.opcache.php) dies ist ebefalls ein PHP Tool das die Performace von PHP drastisch verbessert. Dies alles wir mittels NAT über das LAN erreichbar sein.
 
-Das konzept sollte wie folgt aussehen:
+Das konzept sieht wie folgt aus:
 
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG?raw=true)
 
@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
 
 
 
-Als nächstes legen wir die Zeitzone fest und installieren Updates und alle PAckete die wir brauchen.
+Als nächstes legen wir die Zeitzone fest und installieren Updates und alle Packete die wir brauchen.
 
 ```ruby
 # Zeitzone 
@@ -114,7 +114,7 @@ Apache starten:
  systemctl restart apache2
  ```
 
-Lokales directory erstellen  falls es noch nicht existiert und mit VM zu sharen:
+Lokales directory erstellen  falls es noch nicht existiert und mit VM sharen:
 ```ruby
 dir='/vagrant/www'
 if [ ! -d "$dir" ]; then
@@ -203,7 +203,7 @@ end
 ```
 # Testen
 
-Nachdem  ```Vagrant UP``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Nun kann man in den Browser ihrer Wahl ```localhost:1234``` eingeben und sollte auf folgende seite kommen:
+Nachdem  ```vagrant up``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Nun kann man in den Browser ihrer Wahl ```localhost:1234``` eingeben und sollte auf folgende seite kommen:
 
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild%20Verzeichnis%20Apache.PNG?raw=true)
 
@@ -232,6 +232,8 @@ Um auf das OPcache zu kommen kann man nochmals ```localhost:1234``` im Browser e
 
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/OPcache.PNG?raw=true)
 
+
+Natürlich kann man sich noch mittels ssh in die Maschiene selbst einloggen. Dazu kann man einfach  ```vagrant shh``` im gleichen commandfenster wie man vagrant up ausgeführt hat ausführen. Und schon hatt man Kommandozeilen Zugriff auf die VM.
 
 <div id='quellenangabe'/>
 
