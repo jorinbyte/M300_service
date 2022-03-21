@@ -1,5 +1,5 @@
 # LB2 Dokumentation von Jorin Bailer
-![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG)
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Vagrant_logo.png?raw=true)
 
 
 
@@ -38,7 +38,7 @@ Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Ap
 
 Das konzept sollte wie folgt aussehen:
 
-![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG)
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG?raw=true)
 
 Port 80 der VM sollte auf Port 1234 des Hostsystems weitergeleitet werden um mögliche Komplikationen mit anderen Webservern zu vermeiden.
 
@@ -203,8 +203,43 @@ end
 ```
 # Testen
 
-Nachdem  ```Vagrant UP``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Kann man in den browser ```localhost:1234 ``` 
+Nachdem  ```Vagrant UP``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Nun kann man in den Browser ihrer Wahl ```localhost:1234``` eingeben und sollte auf folgende seite kommen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild%20Verzeichnis%20Apache.PNG?raw=true)
+
+Wenn man nun auf adminer.php klickt sollte man auf folgende Seite kommen:
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Anmelden%20Adminer.PNG?raw=true)
+Hier kann man sich nun mit folgenden Credentials anmelden: 
+
+|    |        | 
+|----------|:-------------:|
+| Datenbank System |  MySQL | 
+| Server |    localhost   | 
+| Benutzer | Admin | 
+| Passwort  |  Admin123 |
+|Datenbank|*leerlassen für erst-anmeldung*|
+
+
+Nach der Eingabe auf Login drücken und es sollte wie folgt aussehen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Angemeldet%20Adminer.PNG?raw=true)
+
+Gratulation nun kann man die Datenbank Oline Verwalten :)
+
+
+
+Um auf das OPcache zu kommen kann man nochmals ```localhost:1234``` im Browser eingeben oder zwei mal zurück gehen und auf opcahce.php drücken. Dann sollte folgende Seite erscheinen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/OPcache.PNG?raw=true)
+
 
 <div id='quellenangabe'/>
 
 # Quellenangabe
+
+| Objekt   |      Quelle     |
+|----------|:-------------:|
+| Vagrant Logo |  https://www.vagrantup.com/|
+| Alle anderen Biler |    Privat  |
+| Code snippets | https://gist.github.com/aurmil/e346aec64c3f6b6ea17259f41e3b6ab0 |
+|  Auftrag |  https://tbzedu.sharepoint.com/sites/M300_Documents/Freigegebene%20Dokumente/Forms/AllItems.aspx?id=%2Fsites%2FM300%5FDocuments%2FFreigegebene%20Dokumente%2FLeistungsbeurteilung%2FM300%5FLB2%5FIaC%5F1%5F6%2Epdf&parent=%2Fsites%2FM300%5FDocuments%2FFreigegebene%20Dokumente%2FLeistungsbeurteilung&p=true |
