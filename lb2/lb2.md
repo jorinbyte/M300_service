@@ -38,6 +38,10 @@ Der verwendete Code muss von ihnen vollständigdokumentiert sein, das gilt auch 
 
 Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Apache gehostete Website entschieden. Auf dieser Website laufen einerseits [Adminer](https://www.adminer.org/) dies ist ein Datenbankverwaltungstool das mittels PHP lauft und [OPcache](https://www.php.net/manual/en/book.opcache.php) dies ist ebefalls ein PHP Tool das die Performace von PHP drastisch verbessert. Dies alles wir mittels NAT über das LAN erreichbar sein.
 
+Das konzept sollte wie folgt aussehen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG)
+
 
 <div id='Erklärung'/>
 
