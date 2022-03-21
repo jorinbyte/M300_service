@@ -240,7 +240,7 @@ Natürlich kann man sich noch mittels ssh in die Maschiene selbst einloggen. Daz
 # Quellenangabe
 
 | Objekt   |      Quelle     |
-|----------|:-------------:|
+|:----------|:-------------|
 | Vagrant Logo |  https://www.vagrantup.com/|
 | Alle anderen Biler |    Privat  |
 | Code snippets | https://gist.github.com/aurmil/e346aec64c3f6b6ea17259f41e3b6ab0 |
