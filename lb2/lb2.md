@@ -232,7 +232,7 @@ Um auf das OPcache zu kommen kann man nochmals ```localhost:1234``` im Browser e
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/OPcache.PNG?raw=true)
 
 
-Natürlich kann man sich noch mittels ssh in die Maschiene selbst einloggen. Dazu kann man einfach  ```vagrant shh``` im gleichen commandfenster wie man vagrant up ausgeführt hat ausführen. Und schon hatt man Kommandozeilen Zugriff auf die VM.
+Natürlich kann man sich noch mittels ssh in die Maschiene selbst einloggen. Dazu kann man einfach  ```vagrant shh``` im gleichen Commandfenster wie man vagrant up ausgeführt hat ausführen. Und schon hatt man Kommandozeilen Zugriff auf die VM.
 
 <div id='quellenangabe'/>
 
