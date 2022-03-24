@@ -62,7 +62,7 @@ Dann Starten wir die Konfiguration der Virtuellen Maschiene. Ich habe die erklä
 #standart Vagrant erschaffen
 Vagrant.configure("2") do |config|  
   config.vm.box = "generic/ubuntu1804" #angabe des Betriebssystems
-  config.vm.network "forwarded_port", guest: 80, host: 1234 #80 ist der Port der auf dem Gaystsystem geöffnet wird und 1234 auf der VM 
+  config.vm.network "forwarded_port", guest: 80, host: 1234 #80 ist der Port der auf dem Gastsystem geöffnet wird und 1234 auf der VM 
   config.ssh.forward_agent = true #damit man sich mit der VM mittels vagrant ssh verbinden kann
 
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox", #angabe des gesharten Ordners
