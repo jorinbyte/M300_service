@@ -1,5 +1,5 @@
 # LB2 Dokumentation von Jorin Bailer
-![image](data:image/png;base64,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)
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Vagrant_logo.png?raw=true)
 
 
 
@@ -34,8 +34,13 @@ Der verwendete Code muss von ihnen vollständigdokumentiert sein, das gilt auch 
 
 # Einführung
 
-Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Apache gehostete Website entschieden. Auf dieser Website laufen einerseits [Adminer](https://www.adminer.org/) dies ist ein Datenbankverwaltungstool das mittels PHP lauft und [OPcache](https://www.php.net/manual/en/book.opcache.php) dies ist ebefalls ein PHP Tool das die Performace von PHP drastisch verbessert. Dies alles wir mittels NAT über das LAN erreichbar sein.
+Ich habe mich für das IaC Projekt für eine Maria DB Datenbank mit einer auf Apache gehostete Website entschieden. Auf dieser Website laufen einerseits [Adminer](https://www.adminer.org/) dies ist ein Datenbankverwaltungstool das mittels PHP funktioniert und [OPcache](https://www.php.net/manual/en/book.opcache.php) dies ist ebefalls ein PHP Tool das die Performace von PHP drastisch verbessert. Dies alles wir mittels NAT über das LAN erreichbar sein.
 
+Das konzept sieht wie folgt aus:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild_Visualisierung_IaC_Jorin_Bailer.PNG?raw=true)
+
+Port 80 der VM sollte auf Port 1234 des Hostsystems weitergeleitet werden um mögliche Komplikationen mit anderen Webservern zu vermeiden.
 
 <div id='Erklärung'/>
 
@@ -49,11 +54,15 @@ time_zone = "Europe/zuerich"
 
 Dann Starten wir die Konfiguration der Virtuellen Maschiene. Ich habe die erklärung kurz gehalten und es neben den Code geschriebn da ich sonst sehr viele von diesen Codeblöcke hätte.
 
+
+
+
+
 ```ruby
 #standart Vagrant erschaffen
 Vagrant.configure("2") do |config|  
   config.vm.box = "generic/ubuntu1804" #angabe des Betriebssystems
-  config.vm.network "forwarded_port", guest: 80, host: 1234 #80 ist der Port der auf dem Gaystsystem geöffnet wird und 1234 auf der VM 
+  config.vm.network "forwarded_port", guest: 80, host: 1234 #80 ist der Port der auf dem Gastsystem geöffnet wird und 1234 auf der VM 
   config.ssh.forward_agent = true #damit man sich mit der VM mittels vagrant ssh verbinden kann
 
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox", #angabe des gesharten Ordners
@@ -71,13 +80,167 @@ Vagrant.configure("2") do |config|
     s.args = [time_zone]  #zeitzone angeben
     s.inline = <<-SHELL   
 ```
- 
 
 
+
+Als nächstes legen wir die Zeitzone fest und installieren Updates und alle Packete die wir brauchen.
+
+```ruby
+# Zeitzone 
+TIME_ZONE=$1
+# einfach instalieren und nicht auf y oder n warten
+export DEBIAN_FRONTEND=noninteractive 
+
+# Zeitzone updaten
+timedatectl set-timezone "$TIME_ZONE"
+
+# Alle Pakages updaten
+apt-get update -q
+
+# Vim und Git installieren für repositorys clonen und vim für danach in das WWW file schreiben
+apt-get install -q -y vim git
+
+# instalieren von Apache, Mariadb und PHP
+apt-get install -q -y apache2
+apt-get install -q -y php7.2 libapache2-mod-php7.2
+apt-get install -q -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip php7.2-bz2 php7.2-intl
+apt-get install -q -y mariadb-server mariadb-client
+```
+
+
+Apache starten:
+
+ ```ruby
+ systemctl restart apache2
+ ```
+
+Lokales directory erstellen  falls es noch nicht existiert und mit VM sharen:
+```ruby
+dir='/vagrant/www'
+if [ ! -d "$dir" ]; then
+  mkdir "$dir"
+fi
+if [ ! -L /var/www/html ]; then
+  rm -rf /var/www/html
+  ln -fs "$dir" /var/www/html
+fi
+cd "$dir"
+```
+Indexfile für die Navigation der Webseite erstellen:
+
+```ruby
+file='/etc/apache2/sites-available/dev.conf'
+if [ ! -f "$file" ]; then
+  SITE_CONF=$(cat <<EOF
+<Directory /var/www/html>
+  AllowOverride All
+  Options +Indexes -MultiViews +FollowSymLinks
+  AddDefaultCharset utf-8
+  SetEnv ENVIRONMENT "development"
+  php_flag display_errors On
+  EnableSendfile Off
+</Directory>
+EOF
+)
+  echo "$SITE_CONF" > "$file"
+fi
+```
+Apache neu laden:
+```ruby
+a2ensite dev
+systemctl reload apache2
+```
+
+Composer für die Abhängigkeitshyrarchie von PHP herunterladen und installieren:
+```ruby
+# Composer
+EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_SIGNATURE="$(php -r "echo hash_file('SHA384', 'composer-setup.php');")"
+php composer-setup.php --quiet
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
+sudo -H -u vagrant bash -c 'composer global require hirak/prestissimo'
 <div id='Testen'/>
+```
+
+OPcache File anlegen falls noch nicht vorhanden:
+```ruby
+# OPcache
+file='opcache.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" https://raw.githubusercontent.com/amnuts/opcache-gui/master/index.php
+fi
+```
+Adminer File anlegen falls noch nicht vorhanden:
+```ruby
+# Adminer 
+file='adminer.php'
+if [ ! -f "$file" ]; then
+  wget -nv -O "$file" http://www.adminer.org/latest.php
+  wget -nv https://raw.githubusercontent.com/vrana/adminer/master/designs/pepa-linha/adminer.css
+fi
+```
+MySQL Konto für verbindung anlegen und Rechte geben:
+```ruby
+#mysql Login erstellen 
+sudo mysql <<-EOF
+
+  create user 'Admin'@'localhost' identified by 'Admin123';
+  Grant all privileges on *.* to 'Admin'@'localhost';
+  Flush privileges;
+
+EOF
+```
+Shell und File beenden:
+```ruby
+SHELL
+  end
+end
+```
 
 # Testen
+
+Nachdem  ```vagrant up``` im Verzeichniss mit dem Vagrantfile ausgeführt wurde, und das ganze durchgelaufen ist. Nun kann man in den Browser ihrer Wahl ```localhost:1234``` eingeben und sollte auf folgende seite kommen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Bild%20Verzeichnis%20Apache.PNG?raw=true)
+
+Wenn man nun auf adminer.php klickt sollte man auf folgende Seite kommen:
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Anmelden%20Adminer.PNG?raw=true)
+Hier kann man sich nun mit folgenden Credentials anmelden: 
+
+|    |        | 
+|----------|:-------------:|
+| Datenbank System |  MySQL | 
+| Server |    localhost   | 
+| Benutzer | Admin | 
+| Passwort  |  Admin123 |
+|Datenbank|*leerlassen für erst-anmeldung*|
+
+
+Nach der Eingabe auf Login drücken und es sollte wie folgt aussehen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/Angemeldet%20Adminer.PNG?raw=true)
+
+Gratulation nun kann man die Datenbank Oline Verwalten :)
+
+
+
+Um auf das OPcache zu kommen kann man nochmals ```localhost:1234``` im Browser eingeben oder zwei mal zurück gehen und auf opcahce.php drücken. Dann sollte folgende Seite erscheinen:
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb2/Bilder%20MD/OPcache.PNG?raw=true)
+
+
+Natürlich kann man sich noch mittels ssh in die Maschiene selbst einloggen. Dazu kann man einfach  ```vagrant shh``` im gleichen Commandfenster wie man vagrant up ausgeführt hat ausführen. Und schon hatt man Kommandozeilen Zugriff auf die VM.
 
 <div id='quellenangabe'/>
 
 # Quellenangabe
+
+| Objekt   |      Quelle     |
+|:----------|:-------------|
+| Vagrant Logo |  https://www.vagrantup.com/|
+| Alle anderen Biler |    Privat  |
+| Code snippets | https://gist.github.com/aurmil/e346aec64c3f6b6ea17259f41e3b6ab0 |
+|  Auftrag |  https://tbzedu.sharepoint.com/sites/M300_Documents/Freigegebene%20Dokumente/Forms/AllItems.aspx?id=%2Fsites%2FM300%5FDocuments%2FFreigegebene%20Dokumente%2FLeistungsbeurteilung%2FM300%5FLB2%5FIaC%5F1%5F6%2Epdf&parent=%2Fsites%2FM300%5FDocuments%2FFreigegebene%20Dokumente%2FLeistungsbeurteilung&p=true |
