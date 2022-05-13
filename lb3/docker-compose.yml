@@ -1,0 +1,10 @@
+version: '3.2'
+services:
+  jenkins:
+    container_name: jenkins_container
+    restart: always
+    image: jenkins/jenkins:lts
+    ports:
+      - 11111:8080
+      - 11122:22
+    volumes: 
