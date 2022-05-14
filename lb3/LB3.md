@@ -25,6 +25,52 @@ Sie erstellen ein selbst gewähltes Projekt, welches auf der Docker Container-Te
 
 Da ich noch nie mit Docker gearbeitet habe wollte ich ein Projekt machen das mirmit meiner erfahrung realistisch vorkommt. Ich machte verschiedene Docker Toutorials duch und entschloss schlussendlich das ich eine Wordpress Seite mache verbunden mit einer SQL Datenbank. Dies sollte auf dem Localhost im Lan verfügbar sein. Natürlich kann man am diese Modifizieren und alles mögliche dort Hosten wie ein internes Wiki oder sonstiges.
 # Erklärung Code
+
+Hier ist als erstes das ganze Dockerfile abgelegt. Ich suche mir ein Paar teile raus und erkläre diese genauer
+```yml   
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Admin123
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: Admin
+      MYSQL_PASSWORD: Admin123
+    
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - wordpress_data:/var/www/html
+    ports:
+      - "1234:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: Admin
+      WORDPRESS_DB_PASSWORD: Admin123
+      WORDPRESS_DB_NAME: wordpress
+volumes:
+  db_data: {}
+  wordpress_data: {}
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+
 # Testen
 <div id='quellenangabe'/>
 

@@ -7,10 +7,10 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_ROOT_PASSWORD: Admin123
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_USER: Admin
+      MYSQL_PASSWORD: Admin123
     
   wordpress:
     depends_on:
@@ -19,12 +19,12 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     ports:
-      - "8000:80"
+      - "1234:80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: Admin
+      WORDPRESS_DB_PASSWORD: Admin123
       WORDPRESS_DB_NAME: wordpress
 volumes:
   db_data: {}
