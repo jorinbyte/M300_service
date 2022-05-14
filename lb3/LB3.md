@@ -58,21 +58,53 @@ volumes:
   db_data: {}
   wordpress_data: {}
 ```
+Als erstes 
+```yml
+db: #Name der Aufgabe
+    image: mysql:5.7 #Name und Version von dem Image das von Docker gezogen werden soll
+    volumes:
+      - db_data:/var/lib/mysql #Ordner die erschaffen werden sollen 
+    restart: always  # gibt an das wärend der installation ohne nachfragen restartet werden sollte
 ```
+Envirotemnt festlegen mit Passwort und Datenbank für die DB
+```yml
+ environment:
+      MYSQL_ROOT_PASSWORD: Admin123
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: Admin
+      MYSQL_PASSWORD: Admin123
 ```
+Angabe das es sich auf die DB bezieht. Und wie bei Sql die Version die man von docker ziehen will.
+
+```yml
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
 ```
+Name des Volumes das angelegt werden soll.
+```yml
+    volumes:
+      - wordpress_data:/var/www/html
 ```
+Ports die wetergeleitet werden. Also im Container Port 80 ausserhalb 1234 um Überschneidungen zu vermeiden.
+```yml
+ports:
+      - "1234:80"
 ```
-```
-```
-```
-```
-```
-```
+Wie bei Sql die Datenbank angaben und der Benutzer.
+```yml
+environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: Admin
+      WORDPRESS_DB_PASSWORD: Admin123
+      WORDPRESS_DB_NAME: wordpress
 ```
 
 # Testen
 <div id='quellenangabe'/>
+
+
 
 # Quellenangabe
 
