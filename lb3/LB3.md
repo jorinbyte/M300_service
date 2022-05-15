@@ -101,7 +101,36 @@ environment:
       WORDPRESS_DB_NAME: wordpress
 ```
 
-# Testen
+# Aufsetzen
+
+Clonen sie das [Git Verzeichnis](https://github.com/jorinbyte/M300_service) und wechseln sie per CMD in das lokale lb3 Verzeichniss.
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Verzeichnis%20wechseln.PNG)
+
+Füren sie den Command 
+```
+docker-compose up -d
+```
+im CMD Fenster aus.
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Docker%20compose%20up.PNG)
+
+Nun pullt es alle Images runter und setzt alles auf.
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/herunterladen.PNG)
+
+Wenn alles fertig ist sollte folgende Meldung im CMD stehen.
+
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Maschienen%20up.PNG)
+
+Als nächstes öffnen sie den Internet-Browser ihres vertrauens und veminden sich mit:
+```
+loclahost:1234
+```
+Sie sollten auf die Start Oberfläche von Wordpress kommen:
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Startbildschirm%20Wordpress.PNG)
+
+
 <div id='quellenangabe'/>
 
 
