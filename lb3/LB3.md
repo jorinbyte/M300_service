@@ -4,13 +4,15 @@
 # Inahltsverzeichnis
  1. [Auftrag](#auftrag)
  
- 1. [Einführung](#einführung) 
+ 2. [Einführung](#einführung) 
 
- 2. [Erklärung Code](#Erklärung)
+ 3. [Erklärung Code](#Erklärung)
 
- 3. [Testen](#testen)
+ 4. [Testen](#aufsetzen)
 
- 4. [Quellenagabe](#quellenangabe)
+ 5. [testing](#testing) 
+
+ 6. [Quellenagabe](#quellenangabe)
 
 
 <div id='Auftrag'/>
@@ -21,9 +23,14 @@ Sie erstellen ein selbst gewähltes Projekt, welches auf der Docker Container-Te
 
 # Einführung
 
-<div id='Erklärung'/>
+
 
 Da ich noch nie mit Docker gearbeitet habe wollte ich ein Projekt machen das mirmit meiner erfahrung realistisch vorkommt. Ich machte verschiedene Docker Toutorials duch und entschloss schlussendlich das ich eine Wordpress Seite mache verbunden mit einer SQL Datenbank. Dies sollte auf dem Localhost im Lan verfügbar sein. Natürlich kann man am diese Modifizieren und alles mögliche dort Hosten wie ein internes Wiki oder sonstiges.
+
+Der logisch Aufbau sollte ungefähr so aussehen:
+ ![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Docker_Aufbau.PNG)
+<div id='Erklärung'/>
+
 # Erklärung Code
 
 Hier ist als erstes das ganze Dockerfile abgelegt. Ich suche mir ein Paar teile raus und erkläre diese genauer
@@ -100,8 +107,11 @@ environment:
       WORDPRESS_DB_PASSWORD: Admin123
       WORDPRESS_DB_NAME: wordpress
 ```
+<div id='aufsetzen'/>
 
 # Aufsetzen
+
+Stellen sie sicher das sie Docker Desktop heruntergeladen haben und das sie den Probecontainer von Docker starten können. 
 
 Clonen sie das [Git Verzeichnis](https://github.com/jorinbyte/M300_service) und wechseln sie per CMD in das lokale lb3 Verzeichniss.
 
@@ -130,6 +140,16 @@ loclahost:1234
 Sie sollten auf die Start Oberfläche von Wordpress kommen:
 ![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Startbildschirm%20Wordpress.PNG)
 
+<div id='testing'/>
+
+
+
+# Testing
+
+Um zu testen ob alles so funktioniert wie es soll, machen sie die Setup-Stritte von Wordpress durch und setzen sie ihren ersten Blog auf. Am schluss sollten sie sich mit ihrem angelegten User einloggen können und die Seite bearbeiten.
+
+Sie können auf ihre Seite wechseln und Tada es sollte ungefähr so aussehen:
+![image]()
 
 <div id='quellenangabe'/>
 
