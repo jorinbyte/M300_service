@@ -149,7 +149,7 @@ Sie sollten auf die Start Oberfläche von Wordpress kommen:
 Um zu testen ob alles so funktioniert wie es soll, machen sie die Setup-Stritte von Wordpress durch und setzen sie ihren ersten Blog auf. Am schluss sollten sie sich mit ihrem angelegten User einloggen können und die Seite bearbeiten.
 
 Sie können auf ihre Seite wechseln und Tada es sollte ungefähr so aussehen:
-![image]()
+![image](https://github.com/jorinbyte/M300_service/blob/main/lb3/BilderMD/Wordpress%20fertig.PNG)
 
 <div id='quellenangabe'/>
 
@@ -161,6 +161,6 @@ Sie können auf ihre Seite wechseln und Tada es sollte ungefähr so aussehen:
 | Objekt   |      Quelle     |
 |:----------|:-------------|
 | Docker Logo |  https://user-images.githubusercontent.com/21102559/41428354-d2fd1052-6fd7-11e8-8824-d4873955d89c.png|
-|  |     |
-|  |  |
-|   |  |
+| Docker  |   https://docs.docker.com/  |
+| Alles andere| Jorin Bailer |
+
